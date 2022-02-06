@@ -1,6 +1,6 @@
 on:
   rss:
-    url: ${{secrets.URL_ID}}sina/finance
+    url: ${{secrets.URL_ID}}douban/explore
 jobs:
   print:
     name: Print
@@ -9,9 +9,11 @@ jobs:
       - name: Print Outputs
         env:
           title: ${{on.rss.outputs.title}}
-          contentSnippet: ${{on.rss.outputs.contentSnippet}}
+          author: ${{on.rss.outputs.author}}
+          description: ${{on.rss.outputs.description}}
           link: ${{on.rss.outputs.link}}
         run: |
           echo title: $title
-          echo contentSnippet: $contentSnippet
+          echo author: $author
+          echo description: $description
           echo link: $link
