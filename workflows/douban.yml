@@ -1,6 +1,8 @@
 on:
   rss:
     url: ${{secrets.URL_ID}}douban/explore
+    parserConfig: 
+      customFields: {item: ['description']}
 jobs:
   print:
     name: Print
