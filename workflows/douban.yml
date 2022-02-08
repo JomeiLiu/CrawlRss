@@ -42,9 +42,11 @@ jobs:
           echo title: $title
           echo description: $description
           echo link: $link
-          description_new=`echo $description | sed -e "s/\"/'/g" | sed -e "s/!//g"` 
+          description_new=`echo $description | sed -e "s/\"/'/g" | sed -e "s/!//g" | sed -e "s/#//g"` 
+          title_new=`echo $title | sed -e "s/\"/'/g" | sed -e "s/!//g" | sed -e "s/#//g"`
           current_time=`date +'%Y-%m-%d %H:%M:%S'`
           echo $description_new
+          echo $title_new
           description1=$(echo $description_new | cut -c1-2002)
           description2=$(echo $description_new | cut -c2001-4002)
           description3=$(echo $description_new | cut -c4001-6002)
@@ -78,7 +80,7 @@ jobs:
                               {
                                   \"type\": \"text\",
                                   \"text\": {
-                                      \"content\": \"$title\"
+                                      \"content\": \"$title_new\"
                                   }
                               }
                           ]
