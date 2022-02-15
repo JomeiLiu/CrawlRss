@@ -25,7 +25,7 @@ on:
     url: ${{secrets.URL_ID}}douban/explore/all/
     parserConfig: 
       customFields: {item: ['description']}
-      timeout: 2000
+      timeout: 120000
 jobs:
   print:
     name: Print
