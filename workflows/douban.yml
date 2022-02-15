@@ -22,7 +22,6 @@
 
 on:
   rss:
-#     url: ${{secrets.URL_ID}}douban/explore
     url: ${{secrets.URL_ID}}douban/explore/all
     parserConfig: 
       customFields: {item: ['description']}
