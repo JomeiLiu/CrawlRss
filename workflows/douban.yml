@@ -23,9 +23,7 @@
 on:
   rss:
     url: ${{secrets.URL_ID}}douban/explore/all/
-    parserConfig: 
-      customFields: {item: ['description']}
-      timeout: 120000
+    parserConfig: {timeout: 200000, customFields: {item: ['description']}}
 jobs:
   print:
     name: Print
