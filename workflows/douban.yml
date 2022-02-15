@@ -22,7 +22,7 @@
 
 on:
   rss:
-    url: ${{secrets.URL_ID}}douban/explore/all
+    url: ${{secrets.URL_ID}}douban/explore/all/
     parserConfig: 
       customFields: {item: ['description']}
 jobs:
